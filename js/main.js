@@ -4,8 +4,8 @@ const todoList = document.querySelector('.todo__list');
 
 let todos = [];
 
-const postTodo = (newObj) => {
-  fetch('https://jsonplaceholder.typicode.com/todos', {
+const postTodos = (newObj) => {
+  fetch('https://my-json-server.typicode.com/markov56/ToDo-list_test-task/todos', {
     method: 'POST',
     body: JSON.stringify(newObj),
     headers: {
@@ -19,6 +19,7 @@ const postTodo = (newObj) => {
 if (localStorage.getItem('list')) {
   todos = JSON.parse(localStorage.getItem('list'));
   renderItems();
+  postTodos(todos);
 }
 
 const countId = () => {
@@ -41,6 +42,7 @@ const onAddClick = () => {
     } else {
       alert('Вы уже добавили эту задачу');
     }
+    postTodos(todos);
   }
 };
 
@@ -68,9 +70,7 @@ function renderItems() {
         <li class="todo__list-item" id=${index}>
             <input type="checkbox" id=${index} ${item.done ? 'checked' : ''}/>
             <label for=${index}>${item.description}</label>
-            <button class="todo__list__remove" onclick="onRemoveClick(event)">
-              
-            </button>
+            <button class="todo__list__remove" onclick="onRemoveClick(event)">Удалить</button>
         </li>
         `;
     todoList.innerHTML = tasks;
