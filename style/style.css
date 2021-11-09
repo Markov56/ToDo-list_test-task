@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: #c31432; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #240b36, #c31432); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #240b36,
+    #c31432
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.todo__top {
+  background: #800080; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffc0cb, #800080);
+  background: linear-gradient(to right, #ffc0cb, #800080);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.todo__title {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.todo__btn {
+  color: #fff;
+  background-color: #9dd458;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.todo__btn:hover {
+  color: #6d6ea2;
+  cursor: pointer;
+}
+
+.todo__list-item {
+  width: 100%;
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.todo__input {
+  padding: 13px;
+  font-size: 16px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.todo__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #800080; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffc0cb, #800080);
+  background: linear-gradient(to right, #ffc0cb, #800080);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 5px;
+}
+
+.todo__list-item {
+  position: relative;
+}
+
+.todo__list__remove {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+  width: 30px;
+  height: 30px;
+}
+
+.todo__list__remove:hover {
+  border-radius: 5px;
+  transform: translateY(2px);
+  opacity: 1;
+}
+
+.todo__list__remove::before {
+  content: '';
+  background-image: url('/images/remove.svg');
+  position: absolute;
+  top: 14px;
+  right: -10px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+.todo__list__remove img {
+  width: 20px;
+  object-fit: cover;
+}
