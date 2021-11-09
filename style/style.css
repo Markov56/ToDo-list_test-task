@@ -110,7 +110,7 @@ button {
 
 .todo__list__remove::before {
   content: '';
-  background-image: url('/images/remove.svg');
+  background-image: url('/img/remove.svg');
   position: absolute;
   top: 14px;
   right: -10px;
